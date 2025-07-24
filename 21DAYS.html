@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>21 Days of Love</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff7f0;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+      color: #333;
+    }
+    .day-box {
+      max-width: 600px;
+      margin: 30px auto;
+      padding: 20px;
+      background: #ffe3e3;
+      border-radius: 20px;
+      box-shadow: 0 0 10px #eec;
+    }
+    .day-box h2 {
+      margin-top: 0;
+      color: #e44;
+    }
+    .message {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+    .song-link {
+      display: inline-block;
+      background: #ff7f7f;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .song-link:hover {
+      background: #ff4f4f;
+    }
+    .nav {
+      margin-top: 20px;
+    }
+    .nav button {
+      margin: 5px;
+      padding: 8px 16px;
+      border: none;
+      background: #ddd;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .nav button:hover {
+      background: #bbb;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>💖 21 Days of Love 💖</h1>
+  
+  <div class="day-box" id="dayContent">
+    <h2>Day 1</h2>
+    <div class="message">
+      HEllO MY HONEY ☀️
+    </div>
+    <audio controls>
+  <source src="https://docs.google.com/uc?export=download&id=1vjZphPs5itFlwSxu1nhmxsXbvgkmIvNJ" type="audio/mp3">
+</audio>
+
+    </a>
+    <div class="nav">
+      <button onclick="prevDay()">← ก่อนหน้า</button>
+      <button onclick="nextDay()">ถัดไป →</button>
+    </div>
+  </div>
+
+  <script>
+    const data = [
+      {
+        day: "Day 1",
+        message: "ขอบคุณที่เข้ามาในชีวิตฉันนะ เธอคือความสุขทุกเช้าเลย ☀️",
+        song: "https://youtu.be/0X7pJQTOjYk",
+        title: "Until I Found You"
+      },
+      {
+        day: "Day 2",
+        message: "ยิ้มของเธอคือเหตุผลที่ฉันยิ้มทุกวันเลยนะ 😊",
+        song: "https://youtu.be/Y4Qqp3LjsdQ",
+        title: "แค่เธอ – Three Man Down"
+      },
+      // เพิ่มข้อมูลต่อได้ถึง Day 21
+    ];
+
+    let current = 0;
+
+    function renderDay() {
+      const day = data[current];
+      document.getElementById("dayContent").innerHTML = `
+        <h2>${day.day}</h2>
+        <div class="message">${day.message}</div>
+        <a href="${day.song}" target="_blank" class="song-link">🎵 ฟังเพลง: ${day.title}</a>
+        <div class="nav">
+          <button onclick="prevDay()">← ก่อนหน้า</button>
+          <button onclick="nextDay()">ถัดไป →</button>
+        </div>
+      `;
+    }
+
+    function nextDay() {
+      if (current < data.length - 1) {
+        current++;
+        renderDay();
+      }
+    }
+
+    function prevDay() {
+      if (current > 0) {
+        current--;
+        renderDay();
+      }
+    }
+  </script>
+
+</body>
+</html>
+
